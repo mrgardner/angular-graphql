@@ -1,17 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
-import { RegistrationComponent } from './components/registration/registration.component';
+import { SpotifyGuard } from './guards/spotify-guard.guard';
+import { CallbackComponent } from './components/callback/callback.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent
-  },
-  {
-    path: 'registration',
-    component: RegistrationComponent
-  }
+  { path: '', component: HomeComponent, canActivate: [SpotifyGuard]},
+  { path: 'callback', component: CallbackComponent},
+  { path: 'login', component: LoginComponent},
 ];
 
 
