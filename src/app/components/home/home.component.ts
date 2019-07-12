@@ -19,12 +19,12 @@ export class HomeComponent implements OnInit {
     const user = gql`
       {
         User {
-         display_name
-         email
-         id
-         followers {
-           total
-         }
+          display_name
+          email
+          id
+          followers {
+            total
+          }
         }
       }
     `;
